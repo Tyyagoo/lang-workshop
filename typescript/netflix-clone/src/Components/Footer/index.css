@@ -1,0 +1,19 @@
+footer {
+    margin: 50px 0px;
+    text-align: center;
+}
+
+footer a {
+    margin-top: 10px;
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+footer a:hover, footer a:active {
+    background-color: #e98a83;
+}
