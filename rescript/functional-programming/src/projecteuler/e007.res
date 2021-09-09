@@ -9,51 +9,6 @@ open Belt
 
 let threshold = 1_000_005
 
-/* 
-
-type taggableNumber = {
-  value: int,
-  tag: bool,
-}
-
-let intExp = (a, b) => (a->Int.toFloat ** b->Int.toFloat)->Float.toInt
-let generateArray = n => Array.makeBy(n - 1, i => {value: i + 2, tag: false})
-
-let makeStep = (arr, a) =>
-  arr->Array.map(n =>
-    n.value >= intExp(a, 2) && mod(n.value, a) == 0 ? {value: n.value, tag: true} : n
-  )
-
-let generatePrimes = n => {
-  Js.log("Generating primes...")
-  let rec loop = (arr, i) => {
-    Js.log(` - ${i->Int.toString}th iteration`)
-    i > 200
-      ? arr
-      : switch arr->Array.get(i) {
-        | None => arr
-        | Some(v) => arr->makeStep(v.value)->loop(i + 1)
-        }
-  }
-  generateArray(n)->loop(0)->Array.keepMap(n => n.tag ? None : Some(n.value))
-}
-
-let findNthPrime = n => {
-  let primes = generatePrimes(threshold)
-  Js.log(primes)
-  Js.log(`Finding the ${n->Int.toString}th prime...`)
-
-  switch primes->Array.get(n - 1) {
-  | None => -1
-  | Some(v) => v
-  }
-}
-
-Js.log(findNthPrime(10_001))
-// 85597
-// 119490 more items
-*/
-
 type taggableNumber = {
   value: int,
   mutable tag: bool, // MUTABLE IS GOOD!!!!!!!
