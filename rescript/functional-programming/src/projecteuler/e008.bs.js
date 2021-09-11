@@ -11,9 +11,11 @@ function sliceAdjacent(str, i, j) {
 }
 
 function calculateProduct(str) {
-  console.log(str);
-  return Belt_Array.reduce(Belt_Array.map(str.split(""), Caml_format.caml_int_of_string), 1, (function (a, b) {
-                return Math.imul(a, b);
+  var integerArray = Belt_Array.map(str.split(""), Caml_format.caml_int_of_string);
+  return Belt_Array.reduce(Belt_Array.map(integerArray, (function (n) {
+                    return n;
+                  })), 1, (function (a, b) {
+                return a * b;
               }));
 }
 
