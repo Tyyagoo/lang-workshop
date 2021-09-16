@@ -36,8 +36,8 @@ function generate_sequence(start) {
   };
 }
 
-function gen_all(limit) {
-  var _i = 2;
+function gen_all(lower, upper) {
+  var _i = lower;
   var _big = [
     [],
     0,
@@ -46,14 +46,12 @@ function gen_all(limit) {
   while(true) {
     var big = _big;
     var i = _i;
-    if (i === limit) {
+    if (i === upper) {
       return big;
     }
     var seq = generate_sequence(i);
-    var x = big[1];
-    console.log(String(x) + " -- " + String(big[2]) + " -- " + String(i));
     var y = seq[1];
-    var biggest = y > x ? [
+    var biggest = y > big[1] ? [
         seq[0],
         y,
         i
@@ -64,23 +62,8 @@ function gen_all(limit) {
   };
 }
 
-var biggest = gen_all(1000001);
-
-var generator = biggest[2];
-
-var size = biggest[1];
-
-console.log("==================");
-
-console.log(size);
-
-console.log(generator);
-
 exports.is_even = is_even;
 exports.calculate_next = calculate_next;
 exports.generate_sequence = generate_sequence;
 exports.gen_all = gen_all;
-exports.biggest = biggest;
-exports.size = size;
-exports.generator = generator;
-/* biggest Not a pure module */
+/* No side effect */

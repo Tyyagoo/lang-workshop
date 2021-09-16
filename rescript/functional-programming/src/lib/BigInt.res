@@ -1,6 +1,6 @@
 open Belt
 
-type bigint = {
+type t = {
   value: array<string>,
   length: int,
 }
@@ -11,9 +11,9 @@ module Helper = {
     let regex = Js.Re.fromString("^[0-9]+$")
     switch str->Js.String2.match_(regex) {
     | None => {
-      Js.log(`${str} isn't a number.`)
-      false
-    }
+        Js.log(`${str} isn't a number.`)
+        false
+      }
     | Some(_) => true
     }
   }
